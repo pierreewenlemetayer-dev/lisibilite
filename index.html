@@ -15,7 +15,17 @@
 <section id="resultats" class="panel" aria-labelledby="titre-resultats" aria-live="polite"><div class="result-header"><h2 id="titre-resultats">Résultats de l'analyse</h2><button id="copier" class="secondary" type="button" hidden>Copier le bilan</button></div><div id="contenu-resultats"><p class="hint">Les résultats apparaîtront ici après l'analyse.</p></div></section>
 <div class="notice"><strong>Version bêta.</strong> JLisi a été confronté au logiciel original sur un corpus de contrôle. Kandel-Moles reproduit les coefficients français et le comptage par césure de ReadSightPy sur les exemples testés. Cette validation expérimentale ne garantit pas l'équivalence sur tous les textes. Les scores décrivent un indice de lisibilité et ne constituent pas une évaluation automatique de la compréhension d'un lecteur.</div>
 <p class="hint">Kandel-Moles : adaptation de ReadSightPy (Yevhen Leonidov, MIT) et des motifs français de césure hyph-fr (Daniel Flipo, Bernard Gaulle et Arthur Reutenauer, MIT). Voir LICENSES.md.</p>
-</main><footer>Prototype de démonstration — non destiné à une diffusion générale à ce stade.</footer>
+</main><section class="panel" aria-labelledby="titre-references">
+<h2 id="titre-references">Références et crédits</h2>
+<p class="hint" style="line-height:1.7">L’indice JLisi présenté ici s’appuie sur les travaux de <strong>Jean Mesnager</strong> sur la lisibilité des textes, ainsi que sur le logiciel <em>Lisi</em> associé à <strong>Jean Mesnager et Stéphane Bres</strong>. Les recherches antérieures de Jean Mesnager ont notamment été menées avec <strong>Jean-Pierre Benoît</strong>. Cette interface est une adaptation expérimentale indépendante, sans affiliation ni approbation revendiquée de ces auteurs.</p>
+<ul style="line-height:1.7;color:#475569">
+<li>Jean Mesnager, « <a href="https://www.persee.fr/doc/colan_0336-1500_1989_num_79_1_1081" target="_blank" rel="noopener noreferrer">Lisibilité des textes pour enfants : un nouvel outil ?</a> », <em>Communication et langages</em>, n° 79, 1989, p. 18-38 (recherches avec Jean-Pierre Benoît).</li>
+<li>Jean Mesnager, « <a href="https://www.cahiers-pedagogiques.com/evaluer-la-difficulte-des-textes-l-approximation-n-est-pas-l-erreur/" target="_blank" rel="noopener noreferrer">Évaluer la difficulté des textes : l’approximation n’est pas l’erreur</a> », <em>Les Cahiers pédagogiques</em> (présentation des principes de mesure et du logiciel Lisi).</li>
+<li>Jean Mesnager et Stéphane Bres, <em>Évaluer la difficulté des textes</em>, Nathan, 2008, ouvrage associé au logiciel Lisi.</li>
+</ul>
+<p class="hint">Ces références documentent l’origine de la méthode ; elles ne constituent pas une autorisation de redistribution des ressources lexicales ou du code d’origine.</p>
+</section>
+<footer>Prototype de démonstration — non destiné à une diffusion générale à ce stade.</footer>
 <script src="jlisi.js"></script>
 <script src="kandel_moles.js"></script>
 <script>
