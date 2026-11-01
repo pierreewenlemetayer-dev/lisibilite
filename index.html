@@ -43,7 +43,7 @@
 (()=>{'use strict';const $=id=>document.getElementById(id);let bilan='';const fmt=n=>Number(n).toFixed(1).replace('.',',');const metric=(name,value)=>{const e=document.createElement('div');e.className='metric';const v=document.createElement('div');v.className='number';v.textContent=String(value);const l=document.createElement('div');l.className='name';l.textContent=name;e.append(v,l);return e};
 // Correspondance issue des seuils de l'application JLisi originale (branche d'affichage normale).
 function niveauJLisi(score, mots){
- if(mots < 200) return {niveau:'Non déterminé',note:'JLisi ne valide pas l’équivalence scolaire sur un texte de moins de 200 mots.'};
+ if(mots < 200) return {niveau:'Niveau scolaire non déterminé : le texte doit comporter au moins 200 mots pour permettre cette estimation.',note:''};
  if(score <= 2) return {niveau:'CE1 – CE2',note:'Niveau indicatif de langue accessible.'};
  if(score < 3.5) return {niveau:'CE2 – CM1',note:'Niveau indicatif de langue accessible.'};
  if(score < 5) return {niveau:'CM1 – CM2',note:'Niveau indicatif de langue accessible.'};
