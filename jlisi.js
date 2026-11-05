@@ -97,9 +97,11 @@ const {premierePasse}=require('./jlisi_premiere_passe_corrigee');
 const {calculScoreJLisi}=require('./jlisi_score_exact');
 
 const lexique=new Set(LEXIQUE);
-const exceptions=new Set(["n'est-ce","jusqu'?","jusqu'au","jusqu'à","jusqu'aux","jusqu'en","qu'est-ce","va-t'en","c'est-?-dire","d'abord","c'est","c'?tait","n'importe"]);
+const exceptions=new Set(["n'est-ce","jusqu'?","jusqu'au","jusqu'à","jusqu'aux","jusqu'en","qu'est-ce","va-t'en","c'est-?-dire","d'abord","c'est","c'?tait","c'était","n'importe"]);
 const suffixes=new Set(['il','elle','ils','elles','on','en','je','tu','nous','vous','même','mêmes','là','ci','ce','y','le','la','les','moi','lui','leur','toi']);
-function connu(w){return lexique.has(w)}
+// Compatibilité avec les dictionnaires effectivement lus par JLisi.jar (version de référence) :
+// les formes comportant ces caractères sont classées absentes par le logiciel original.
+function connu(w){return !/[àâäéèêëîïôöùûüçœ]/i.test(w)&&lexique.has(w)}
 function dejaAbsentFlex(w,absents){if(absents.has(w))return true; if(/[sx]$/.test(w))return absents.has(w.slice(0,-1));return absents.has(w+'s')||absents.has(w+'x')}
 function ajouter(w,absents){if([...absents].some(x=>x.toLowerCase()===w.toLowerCase()))return;if(!dejaAbsentFlex(w,absents))absents.add(w)}
 function evaluer(texte){
